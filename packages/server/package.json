@@ -1,6 +1,6 @@
 {
   "name": "@mcp-interactive-ui/server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "LLM-agnostic MCP server exposing the mcp-interactive-ui block registry as tools.",
   "license": "MIT",
   "type": "module",
@@ -18,7 +18,9 @@
   "bin": {
     "mcp-interactive-ui-server": "./dist/cli.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

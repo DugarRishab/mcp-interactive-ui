@@ -1,6 +1,6 @@
 {
   "name": "@mcp-interactive-ui/types",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Shared Zod schemas and TypeScript types for the mcp-interactive-ui ecosystem.",
   "license": "MIT",
   "type": "module",
@@ -15,7 +15,9 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
