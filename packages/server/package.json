@@ -1,0 +1,40 @@
+{
+  "name": "@mcp-interactive-ui/server",
+  "version": "0.1.0",
+  "description": "LLM-agnostic MCP server exposing the mcp-interactive-ui block registry as tools.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "mcp-interactive-ui-server": "./dist/cli.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist .turbo coverage"
+  },
+  "dependencies": {
+    "@mcp-interactive-ui/core": "workspace:*",
+    "@mcp-interactive-ui/types": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

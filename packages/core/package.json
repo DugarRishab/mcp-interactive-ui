@@ -1,0 +1,35 @@
+{
+  "name": "@mcp-interactive-ui/core",
+  "version": "0.1.0",
+  "description": "Registry, validators, normalizer, and OpenAI tool adapters for mcp-interactive-ui.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist .turbo coverage"
+  },
+  "dependencies": {
+    "@mcp-interactive-ui/types": "workspace:*",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
