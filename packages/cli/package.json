@@ -1,0 +1,47 @@
+{
+  "name": "@mcp-interactive-ui/cli",
+  "version": "0.1.0",
+  "description": "CLI tooling for mcp-interactive-ui development and management.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "mcpui": "./dist/cli.cjs"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist .turbo coverage"
+  },
+  "dependencies": {
+    "@mcp-interactive-ui/core": "workspace:*",
+    "@mcp-interactive-ui/types": "workspace:*",
+    "commander": "^11.0.0",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.0",
+    "@types/fs-extra": "^11.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
