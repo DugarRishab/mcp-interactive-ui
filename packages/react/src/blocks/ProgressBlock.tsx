@@ -19,7 +19,7 @@ export function ProgressBlock({ data, className, blockId, onAction }: ProgressBl
   const value = data.value ?? 0;
   const max = data.max ?? 100;
   const percentage = Math.round((value / max) * 100);
-  const progressId = blockId ?? `progress-${Math.random().toString(36).substr(2, 9)}`;
+  const _progressId = blockId ?? `progress-${Math.random().toString(36).substr(2, 9)}`;
 
   const handleStepClick = useCallback((stepId: string) => {
     if (data.clickable) {

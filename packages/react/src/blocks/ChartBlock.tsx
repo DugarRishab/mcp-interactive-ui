@@ -24,7 +24,6 @@ export function ChartBlock({ data, className }: ChartBlockProps): JSX.Element {
     const chartHeight = height - 60;
     const chartWidth = 720; // Available width after margins
     const leftMargin = 60;
-    const rightMargin = 20;
     const groupWidth = chartWidth / data.data.labels.length;
     const barWidth = (groupWidth * 0.9) / data.data.datasets.length; // 90% of group for bars, 10% for gap
 

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm tsc *)",
+      "Bash(pnpm --filter @mcp-interactive-ui/react build)",
+      "Bash(npx tsc *)",
+      "Bash(pnpm run *)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm --filter @mcp-interactive-ui/docs build)",
+      "Bash(pnpm --filter @mcp-interactive-ui/docs dev)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(pnpm --filter @mcp-interactive-ui/vue lint)",
+      "Bash(cat packages/vue/.eslintrc.cjs)",
+      "Bash(cat packages/vue/eslint.config.js)",
+      "Bash(pnpm why *)",
+      "Bash(pnpm add *)"
+    ]
+  }
+}

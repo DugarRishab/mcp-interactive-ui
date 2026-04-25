@@ -92,7 +92,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { TimelineData, TimelineEvent } from '@mcp-interactive-ui/types';
+import type { TimelineData } from '@mcp-interactive-ui/types';
 
 interface Props {
   data: TimelineData;

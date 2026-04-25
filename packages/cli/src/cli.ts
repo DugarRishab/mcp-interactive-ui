@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-import chalk from 'chalk';
 import { initCommand } from './commands/init.js';
 import { addBlockCommand } from './commands/add-block.js';
 import { validateCommand } from './commands/validate.js';

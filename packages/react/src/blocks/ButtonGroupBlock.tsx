@@ -29,7 +29,7 @@ const buttonSizes: Record<string, string> = {
  * Renders a `button_group` block with shadcn/ui styling.
  * Supports horizontal, vertical, and grid layouts with various button styles.
  */
-export function ButtonGroupBlock({ data, className, blockId, onAction }: ButtonGroupBlockProps): JSX.Element {
+export function ButtonGroupBlock({ data, className, onAction }: ButtonGroupBlockProps): JSX.Element {
   const [confirmingButton, setConfirmingButton] = useState<string | null>(null);
   const [loadingButtons, setLoadingButtons] = useState<Set<string>>(new Set());
 

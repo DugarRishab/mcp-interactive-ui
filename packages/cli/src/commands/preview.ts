@@ -1,6 +1,5 @@
 import chalk from 'chalk';
 import http from 'http';
-import path from 'path';
 
 interface PreviewOptions {
   port?: string;

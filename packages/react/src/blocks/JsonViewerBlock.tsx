@@ -6,7 +6,7 @@ export interface JsonViewerBlockProps {
   className?: string;
 }
 
-function JsonValue({ value, depth = 0, maxDepth }: { value: any; depth?: number; maxDepth?: number }): JSX.Element {
+function JsonValue({ value, depth = 0, maxDepth }: { value: unknown; depth?: number; maxDepth?: number }): JSX.Element {
   if (maxDepth && depth >= maxDepth) {
     return <span className="text-muted-foreground">...</span>;
   }

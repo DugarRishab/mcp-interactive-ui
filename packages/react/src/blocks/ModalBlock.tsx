@@ -13,7 +13,7 @@ export interface ModalBlockProps {
  * Renders a `modal` block with shadcn/ui styling.
  * Supports nested content, footer actions, and various sizes.
  */
-export function ModalBlock({ data, className, blockId, onAction }: ModalBlockProps): JSX.Element {
+export function ModalBlock({ data, className, onAction }: ModalBlockProps): JSX.Element {
   const [isOpen, setIsOpen] = useState(data.isOpen ?? false);
 
   // Update local state when data changes

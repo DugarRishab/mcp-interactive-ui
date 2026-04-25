@@ -62,9 +62,13 @@ describe('RenderAIContent', () => {
     render(
       <RenderAIContent
         data={data}
-        components={{
-          notice: ({ data: d }) => <div data-testid="custom">{d.message}</div>,
-        }}
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        components={
+          {
+            notice: ({ data: d }: { data: { message: string } }) => <div data-testid="custom">{d.message}</div>,
+          } as any
+        }
+        /* eslint-enable @typescript-eslint/no-explicit-any */
       />,
     );
     expect(screen.getByTestId('custom')).toHaveTextContent('hi');

@@ -154,7 +154,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import type { ProgressData, ProgressStep } from '@mcp-interactive-ui/types';
+import type { ProgressData } from '@mcp-interactive-ui/types';
 
 interface Props {
   data: ProgressData;

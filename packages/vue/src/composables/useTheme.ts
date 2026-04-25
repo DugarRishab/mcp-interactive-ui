@@ -1,4 +1,4 @@
-import { ref, computed, provide, inject, type InjectionKey } from 'vue';
+import { ref, provide, inject, type InjectionKey } from 'vue';
 
 export interface ThemeColors {
   primary: string;

@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import type { TabsData, TabItemWithContent, NormalizedBlock } from '@mcp-interactive-ui/types';
+import type { TabsData, TabItemWithContent } from '@mcp-interactive-ui/types';
 import { NestedBlockRenderer } from '../components/NestedBlockRenderer.js';
 
 export interface TabsBlockProps {

@@ -1,13 +1,12 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import { glob } from 'glob';
-import { z } from 'zod';
 
 interface ValidateOptions {
   fix?: boolean;
 }
 
-export async function validateCommand(pathArg?: string, options: ValidateOptions = {}): Promise<void> {
+export async function validateCommand(pathArg?: string, _options: ValidateOptions = {}): Promise<void> {
   const blocksDir = pathArg || './src/blocks';
 
   if (!await fs.pathExists(blocksDir)) {

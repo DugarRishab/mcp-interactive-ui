@@ -1,4 +1,4 @@
-import type { BlockType, NormalizedBlock } from '@mcp-interactive-ui/types';
+import type { BlockType } from '@mcp-interactive-ui/types';
 import { DataTableBlock } from './blocks/DataTableBlock.js';
 import { KVCardBlock } from './blocks/KVCardBlock.js';
 import { StatGroupBlock } from './blocks/StatGroupBlock.js';

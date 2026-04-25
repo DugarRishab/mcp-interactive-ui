@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import path from 'path';
-import { z } from 'zod';
 
 interface AddBlockOptions {
   template?: string;
@@ -19,16 +18,16 @@ const BLOCK_TEMPLATES = {
 };
 
 export async function addBlockCommand(name: string, options: AddBlockOptions): Promise<void> {
-  const template = options.template || 'read-only';
+  const _template = options.template || 'read-only';
 
-  if (!BLOCK_TEMPLATES[template as keyof typeof BLOCK_TEMPLATES]) {
-    console.error(chalk.red(`Unknown template: ${template}`));
+  if (!BLOCK_TEMPLATES[_template as keyof typeof BLOCK_TEMPLATES]) {
+    console.error(chalk.red(`Unknown template: ${_template}`));
     console.log(chalk.gray('Available templates: interactive, read-only'));
     return;
   }
 
   // Generate block schema file
-  const schemaContent = generateSchemaFile(name, template);
+  const schemaContent = generateSchemaFile(name, _template);
 
   const blocksDir = './src/blocks';
   await fs.ensureDir(blocksDir);
@@ -45,14 +44,14 @@ export async function addBlockCommand(name: string, options: AddBlockOptions): P
 
   console.log(chalk.green(`✓ Created ${fileName}`));
   console.log(chalk.gray(`  Path: ${filePath}`));
-  console.log(chalk.gray(`  Template: ${template}`));
+  console.log(chalk.gray(`  Template: ${_template}`));
 }
 
 function toCamelCase(str: string): string {
   return str.replace(/[-_](.)/g, (_, char) => char.toUpperCase());
 }
 
-function generateSchemaFile(name: string, template: string): string {
+function generateSchemaFile(name: string, _template: string): string {
   const camelName = toCamelCase(name);
 
   return `import { z } from 'zod';

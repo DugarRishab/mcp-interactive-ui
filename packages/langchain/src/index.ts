@@ -40,7 +40,7 @@ export function registryToLangChainTools(registry: FrozenRegistry): StructuredTo
       super();
     }
 
-    async _call(input: unknown): Promise<string> {
+    async _call(_input: unknown): Promise<string> {
       // The tool call result is not used by the adapter — we only care about
       // what the LLM passed as arguments. Return an empty string.
       return '';

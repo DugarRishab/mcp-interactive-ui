@@ -80,7 +80,7 @@ interface Props {
   blockId?: string;
 }
 
-const props = defineProps<Props>();
+const _props = defineProps<Props>();
 const emit = defineEmits<{
   action: [action: string, payload: unknown];
 }>();
