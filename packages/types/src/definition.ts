@@ -1,5 +1,5 @@
 import type { z } from 'zod';
-import type { BlockType, BlockDataByType } from './blocks/index.js';
+import type { BlockType, KnownBlockType, BlockDataByType } from './blocks/index.js';
 
 /**
  * Metadata describing a registered block. The same definition is consumed by:
@@ -18,9 +18,10 @@ export interface BlockDefinition<T extends BlockType = BlockType> {
   /** One-sentence description. Included verbatim in the LLM system prompt. */
   description: string;
   /** Coarse grouping for filtering / discovery. */
-  category: 'data' | 'feedback' | 'layout' | 'text';
+  category: 'data' | 'feedback' | 'layout' | 'text' | 'interactive';
   /** Runtime Zod schema for the block's `data` payload. */
-  schema: z.ZodType<BlockDataByType[T]>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  schema: z.ZodType<any>;
   /** A minimal, valid example — used in prompts and docs. */
-  example: BlockDataByType[T];
+  example: T extends KnownBlockType ? BlockDataByType[T] : unknown;
 }
