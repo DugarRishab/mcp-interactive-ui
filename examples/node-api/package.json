@@ -1,0 +1,20 @@
+{
+  "name": "@mcp-interactive-ui/example-node-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "@mcp-interactive-ui/core": "workspace:*",
+    "@mcp-interactive-ui/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}
