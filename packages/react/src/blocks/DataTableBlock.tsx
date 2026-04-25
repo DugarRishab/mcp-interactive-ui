@@ -31,17 +31,20 @@ function renderCell(col: DataTableColumn, value: unknown): React.ReactNode {
  * `components` prop on <RenderAIContent />.
  */
 export function DataTableBlock({ data, className }: DataTableBlockProps): JSX.Element {
+  const tableId = `table-${Math.random().toString(36).substr(2, 9)}`;
   return (
-    <div className={className ?? 'w-full overflow-x-auto rounded-md border'}>
-      <table className="w-full caption-bottom text-sm">
+    <div className={className ?? 'w-full overflow-x-auto rounded-md border'} role="region" aria-labelledby={`${tableId}-caption`}>
+      <table className="w-full caption-bottom text-sm" aria-describedby={data.caption ? `${tableId}-caption` : undefined}>
         {data.caption ? (
-          <caption className="mt-2 text-xs text-muted-foreground">{data.caption}</caption>
+          <caption id={`${tableId}-caption`} className="mt-2 text-xs text-muted-foreground">{data.caption}</caption>
         ) : null}
-        <thead className="[&_tr]:border-b">
-          <tr className="border-b transition-colors">
+        <thead className="[&_tr]:border-b" role="rowgroup">
+          <tr className="border-b transition-colors" role="row">
             {data.columns.map((col) => (
               <th
                 key={col.key}
+                scope="col"
+                role="columnheader"
                 className="h-10 px-3 text-left align-middle font-medium text-muted-foreground"
               >
                 {col.header}
@@ -49,11 +52,11 @@ export function DataTableBlock({ data, className }: DataTableBlockProps): JSX.El
             ))}
           </tr>
         </thead>
-        <tbody className="[&_tr:last-child]:border-0">
+        <tbody className="[&_tr:last-child]:border-0" role="rowgroup">
           {data.rows.map((row, rowIndex) => (
-            <tr key={rowIndex} className="border-b transition-colors hover:bg-muted/50">
+            <tr key={rowIndex} role="row" className="border-b transition-colors hover:bg-muted/50">
               {data.columns.map((col) => (
-                <td key={col.key} className="p-3 align-middle">
+                <td key={col.key} role="cell" className="p-3 align-middle">
                   {renderCell(col, row[col.key])}
                 </td>
               ))}

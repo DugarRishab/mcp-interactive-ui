@@ -19,7 +19,7 @@ function deltaArrow(d: StatDelta): string {
 
 export function StatGroupBlock({ data, className }: StatGroupBlockProps): JSX.Element {
   return (
-    <div className={className ?? 'grid gap-3 sm:grid-cols-2 lg:grid-cols-4'}>
+    <div className={className ?? 'grid gap-3 grid-cols-2 lg:grid-cols-4'}>
       {data.items.map((item, i) => (
         <div
           key={i}
