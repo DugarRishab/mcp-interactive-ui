@@ -25,7 +25,7 @@ interface Props {
   blockId?: string;
 }
 
-const props = defineProps<Props>();
+const _props = defineProps<Props>();
 const emit = defineEmits<{
   action: [action: string, payload: unknown];
 }>();
@@ -91,7 +91,7 @@ const TreeNode = {
         hasChildren.value && props.expandable
           ? h('button', {
               class: 'w-4 h-4 flex items-center justify-center text-muted-foreground hover:text-foreground',
-              onClick: (e: Event) => {
+              onClick: (e: UIEvent) => {
                 e.stopPropagation();
                 toggle();
               },
